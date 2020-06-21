@@ -1,0 +1,97 @@
+header {
+    width:  100%;
+    height: 60px;
+    border-bottom: 10px rgba(127,255,120,0.3) solid;
+    background: rgba(173,247,255,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header img {
+    height: 50px;
+    float: left;
+}
+
+header p {
+    font-size: 15px;
+    line-height: 50px;
+    font-weight: bold;
+    color:palevioletred;
+    opacity: 0.7;
+}
+
+.container {
+    position: absolute;
+    top: 50px;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+    color:darkslategrey;
+    margin-bottom: 40px;
+}
+
+.btn {
+    text-decoration: none;
+    
+    border-radius: 14px;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(255, 255, 255, 1);
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 1;
+    /* border: 1px solid rgba(0,0,0,0); */
+    transition: border 0.3s;
+}
+
+.btn:active {
+    opacity: 0.5;
+    border: 7px solid rgba(167, 167, 167, 0.5);
+}
+
+.routine {
+    background-color: orange;
+}
+
+.done {
+    background-color: lightblue;
+}
+
+table {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: grey 1px solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+th {
+    opacity: 0.8;
+}
+
+
+.content {
+    width: 180px;
+}
+
+.record {
+    background-color: olive;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.clear {
+    width: 50%;
+    margin-top: 100px;
+    background-color: gray;
+}
