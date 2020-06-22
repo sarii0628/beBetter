@@ -10,30 +10,69 @@
 <body>
     <header>
         <div class="logo">
-            <img src="/images/diet_running_woman.png" alt="">
-            <p>Be Better</p>
+            <a href="/">
+                <img src="/images/diet_running_woman.png" alt="">
+                <p>Be Better</p>
+            </a>    
         </div>
     </header>
     <div class="container">
         <h1>soooooo excited to become better me!!</h1>
-        <a href="" class="btn routine">+ routine</a>
-        <a href="" class="btn done">+ done</a>
+        <a href="/addRoutine" class="btn routine">+ routine</a>
+        <a href="/addDone" class="btn done">+ done</a>
         <table>
-            <tr>
+            <tr >
                 <th class="content">content</th>
-                <th class="routine">routine</th>
-                <th class="done">done</th>
+                <th class="routine head">routine</th>
+                <th class="done head">done</th>
                 <th></th>
             </tr>
+            
+            <tr class="morning title"><th>morning</th><th></th><th></th><th></th></tr>
+
+            <% morningItems.forEach((item) => { %>
+
             <tr>
-                <td>体重計に乗る</td>
-                <td>1</td>
-                <td >0</td>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
+                <td><a href="/edit/<%=item.id%>"><%=  item.content %></a></td>
+                <td><%-  item.routine ? '<i class="fas fa-check-square orange_clr"></i>' : ""  %></td>
+                <td><%-  item.done ? '<i class="fas fa-check-square blue_clr"></i>' : ""  %></td>
+                <td><form action="/delete/<%=item.id%>" method="post">
+                        <button type="submit"><i class="fas fa-trash"></i></button>
+                    </form>
+                </td>
             </tr>
+            <% }); %>
+            
+            <tr class="midday title"><th>midday</th><th></th><th></th><th></th></tr>
+
+            <% middayItems.forEach((item) => { %>
+
+            <tr>
+                <td><a href="/edit/<%=item.id%>"><%=  item.content %></a></td>
+                <td><%-  item.routine ? '<i class="fas fa-check-square orange_clr"></i>' : ""  %></td>
+                <td><%-  item.done ? '<i class="fas fa-check-square blue_clr"></i>' : ""  %></td>
+                <td><form action="/delete/<%=item.id%>" method="post">
+                    <button type="submit"><i class="fas fa-trash"></i></button>
+                    </form></td>
+            </tr>
+            <% }); %>
+        
+            <tr class="evening title"><th>evening</th><th></th><th></th><th></th></tr>
+
+            <% eveItems.forEach((item) => { %>
+
+            <tr>
+                <td><a href="/edit/<%=item.id%>"><%=  item.content %></a></td>
+                <td><%-  item.routine ? '<i class="fas fa-check-square orange_clr"></i>' : ""  %></td>
+                <td><%-  item.done ? '<i class="fas fa-check-square blue_clr"></i>' : ""  %></td>
+                <td><form action="/delete/<%=item.id%>" method="post">
+                    <button type="submit"><i class="fas fa-trash"></i></button>
+                    </form></td>
+            </tr>
+            <% }); %>
         </table>
-        <a href="" class="btn record">record</a><br>
-        <form action="" method="POST">
+        <a href="/record" class="btn record">record</a><br>
+        <form action="/clear" method="POST">
             <input type="submit" value="clear" class="btn clear">
         </form>
     </div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Better</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/diet_running_woman.png" alt="">
+                <p>Be Better</p>
+            </a>    
+        </div>
+    </header>
+    <div class="container">
+        <p>edit Routine/Done</p>  
+        <form action="/update/<%=item.id%>" method="post" class="single">
+            <input type="text" name="itemName" id="item_text" value="<%=item.content%>">
+            <p>Routine?</p>
+            <label><input type="radio" name="routine" value="1" <%= item.routine ? 'checked="checked"' : '' %> />yes</label>
+            <label><input type="radio" name="routine" value="0" <%= !item.routine ? 'checked="checked"' : '' %>/>no</label>
+            <p>Done? </p>
+            <label><input type="radio" name="done" value="1" <%= item.done ? 'checked="checked"' : '' %> />yes</label>
+            <label><input type="radio" name="done" value="0" <%= !item.done ? 'checked="checked"' : '' %> />no</label>
+            <br>
+            <input type="submit" value="okay" class="btn ok">
+        </form>
+    </div>
+</body>

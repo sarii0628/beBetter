@@ -1,8 +1,14 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    color: slategrey
+}
+
 header {
     width:  100%;
     height: 60px;
-    border-bottom: 10px rgba(127,255,120,0.3) solid;
-    background: rgba(173,247,255,0.5);
+    border-bottom: 10px rgb(171, 250, 167) solid;
+    background: rgb(192, 249, 255);
     position: fixed;
     top: 0;
     left: 0;
@@ -10,8 +16,9 @@ header {
 }
 
 header img {
-    height: 50px;
+    height: 45px;
     float: left;
+    margin-left: 10px;
 }
 
 header p {
@@ -22,11 +29,34 @@ header p {
     opacity: 0.7;
 }
 
+/* iOSでのデフォルトスタイルをリセット */
+input[type="submit"],
+input[type="button"] {
+  /* border-radius: 0; */
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
 .container {
     position: absolute;
     top: 50px;
-    padding: 30px;
+    left: 0;
+    padding:  10px;
     text-align: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
 h1 {
@@ -56,6 +86,7 @@ h1 {
 
 .routine {
     background-color: orange;
+    
 }
 
 .done {
@@ -63,14 +94,13 @@ h1 {
 }
 
 table {
-    margin-top: 60px;
-    margin-bottom: 50px;
+    margin: 60px auto 50px;
     font-size: 14px;
     border-collapse: collapse;
 }
 
 th, td {
-    border-bottom: grey 1px solid;
+    border-bottom: rgba(180, 178, 178, 0.411) 3px solid;
     padding: 5px;
     margin: 5px;
 }
@@ -79,19 +109,94 @@ th {
     opacity: 0.8;
 }
 
+.head {
+    opacity: 0.8;
+    border-radius: 10px 10px 0 0;
+    font-size: 10px;
+    font-weight: lighter;
+    width: 50px;
+}
+
 
 .content {
     width: 180px;
 }
 
 .record {
-    background-color: olive;
+    background-color: lightgreen;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 .clear {
+    text-decoration: none;
     width: 50%;
     margin-top: 100px;
     background-color: gray;
+    
+}
+
+input[type="text"] {
+    width: 70%;
+    height: 40px;
+    
+    margin: 20px;
+    border-radius: 7px;
+}
+
+.single input[type="submit"] {
+    width: 60%;
+}
+
+#routine_text {
+    border: rgba(248, 129, 49, 0.4) 2px solid;
+}
+#done_text {
+    border: rgba(49, 235, 248, 0.4) 2px solid;
+}
+#item_text {
+    border: rgba(49, 248, 215, 0.4) 3px solid;
+}
+
+.title {
+    color: grey;
+}
+
+.morning {
+    background-color: mintcream;
+}
+
+.midday {
+    background-color: lemonchiffon;
+}
+
+.evening {
+    background-color: rgba(70, 130, 180, 0.3);
+    
+}
+
+.ok {
+    margin-top: 30px;
+    background-color: lightseagreen;
+}
+
+button {
+    border: none;
+    background-color: none;   
+}
+
+.orange_clr {
+    color: orange;
+}
+
+.blue_clr {
+    color: lightblue;
+}
+
+.copybox {
+    margin: 30px;
+    padding: 10px;
+    font-size: 10px;
+    border: 1px solid gray;
+    text-align: left;
 }
