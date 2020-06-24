@@ -20,24 +20,20 @@
     <div class="container">
         <p>コピペしてね</p>  
         <div class="copybox">
-            ▶︎朝
+            ▶︎朝<br>
+            <% morningItems.forEach((item) => { %>
+                <%= item.content %><br>
+            <% }); %>
             
-                <% morningItems.forEach((item) => { %>
-                    <%= item.content %><br>
-                <% }); %>
+            ▶︎昼<br>
+            <% middayItems.forEach((item) => { %>
+                <%= item.content %><br>
+            <% }); %>
             
-            <p>▶︎昼</p>
-            <div class="time">
-                <% middayItems.forEach((item) => { %>
-                    <p><%= item.content %></p>
-                <% }); %>
-            </div>
-            <p>▶︎夕</p>
-            <div class="time">
-                <% eveItems.forEach((item) => { %>
-                    <p><%= item.content %></p>
-                <% }); %>
-            </div>
+            ▶︎夕<br>
+            <% eveItems.forEach((item) => { %>
+                <%= item.content %><br>
+            <% }); %>
         </div>
     </div>
 </body>
