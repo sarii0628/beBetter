@@ -28,6 +28,9 @@ connection.connect((err) => {
     console.log('success');
 });
 
+connection.query('CREATE TABLE IF NOT EXISTS diets(id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, content TEXT, routine BOOLEAN, done BOOLEAN, timing INT)');
+
+
 app.get('/', (req, res) => {
     connection.query(
         'SELECT * FROM diets',
