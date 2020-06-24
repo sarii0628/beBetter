@@ -152,7 +152,7 @@ app.get('/record', (req, res) => {
             });
 
             var sentence = morning +  midday + evening;
-            clipboardy.writeSync(sentence);
+            // clipboardy.writeSync(sentence);
             console.log(sentence);
             res.render('record.ejs', {items: results, morningItems: morningItems, middayItems: middayItems, eveItems: eveItems});
         }
