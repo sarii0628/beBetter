@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
     text-decoration: none;
-    color: slategrey
+    color: slategrey;
+    font-family: 'Montserrat', sans-serif;
 }
 
 header {
