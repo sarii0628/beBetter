@@ -4,6 +4,7 @@ const app = express();
 const clipboardy = require('clipboardy');
 
 app.use(express.static('public'));
+
 app.use(express.urlencoded({extended: false}));
 
 // const connection = mysql.createConnection({
