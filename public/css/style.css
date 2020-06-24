@@ -203,6 +203,7 @@ button {
     margin: 30px;
     padding: 10px;
     font-size: 10px;
+    line-height: 10px;
     border: 1px solid gray;
     text-align: left;
 }

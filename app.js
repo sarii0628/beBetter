@@ -1,7 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
-const clipboardy = require('clipboardy');
+// const clipboardy = require('clipboardy');
 
 app.use(express.static('public'));
 
