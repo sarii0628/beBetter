@@ -146,6 +146,10 @@ input[type="text"] {
     border-radius: 7px;
 }
 
+.single input[type="radio"] {
+    margin-right: 15px;
+}
+
 .single input[type="submit"] {
     width: 60%;
 }
