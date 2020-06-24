@@ -6,11 +6,17 @@ const clipboardy = require('clipboardy');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'password',
+//     database: 'beBetter'
+// });
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'beBetter'
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'ba0cc08e2b00a0',
+    password: '7bf701f0',
+    database: 'heroku_34645c12ef887ff'
 });
 
 connection.connect((err) => {
