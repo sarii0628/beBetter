@@ -14,21 +14,23 @@ app.use(express.urlencoded({extended: false}));
 //     database: 'beBetter'
 // });
 
-// const connection = mysql.createConnection({
-//     host: 'us-cdbr-east-05.cleardb.net',
-//     user: 'ba0cc08e2b00a0',
-//     password: '7bf701f0',
-//     database: 'heroku_34645c12ef887ff'
-// });
-
-var db_config = {
+const connection = mysql.createConnection({
     host: 'us-cdbr-east-05.cleardb.net',
     user: 'ba0cc08e2b00a0',
     password: '7bf701f0',
     database: 'heroku_34645c12ef887ff'
-};
+});
 
-var connection = mysql.createPool(db_config);
+// var db_config = {
+//     connectionLimit: 10,
+//     host: 'us-cdbr-east-05.cleardb.net',
+//     user: 'ba0cc08e2b00a0',
+//     password: '7bf701f0',
+//     database: 'heroku_34645c12ef887ff',
+//     timezone: 'jst'
+// };
+
+// var connection = mysql.createPool(db_config);
 
 // app.set('port', (process.env.PORT || 5000));
 
