@@ -14,27 +14,49 @@ app.use(express.urlencoded({extended: false}));
 //     database: 'beBetter'
 // });
 
-const connection = mysql.createConnection({
+// const connection = mysql.createConnection({
+//     host: 'us-cdbr-east-05.cleardb.net',
+//     user: 'ba0cc08e2b00a0',
+//     password: '7bf701f0',
+//     database: 'heroku_34645c12ef887ff'
+// });
+
+var db_config = {
     host: 'us-cdbr-east-05.cleardb.net',
     user: 'ba0cc08e2b00a0',
     password: '7bf701f0',
     database: 'heroku_34645c12ef887ff'
-});
-
-// var db_config = {
-//     connectionLimit: 10,
-//     host: 'us-cdbr-east-05.cleardb.net',
-//     user: 'ba0cc08e2b00a0',
-//     password: '7bf701f0',
-//     database: 'heroku_34645c12ef887ff',
-//     timezone: 'jst'
-// };
+};
 
 // var connection = mysql.createPool(db_config);
 
-// app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 5000));
 
+var connection;
 
+function handleDisconnect() {
+    console.log('INFO.CONNECTION_DB: ');
+    connection = mysql.createConnection(db_config);
+
+    connection.connect(function(err) {
+        if(err) {
+            console.log('ERROR.CONNECTION_DB: ', err);
+            setTimeout(handleDisconnect, 1000);
+        }
+    });
+
+    connection.on('error', function(err) {
+        console.log('ERROR>DB: ', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+            console.log('ERROR.CONNECTION_LOST: ', err);
+            handleDisconnect();
+        } else {
+            throw err;
+        }
+    });
+}
+
+handleDisconnect();
 // 
 // connection.connect((err) => {
 //     if(err) {
@@ -190,4 +212,6 @@ app.post('/clear', (req, res) => {
     );
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(app.get('port'), function() {
+    console.log('heroku-mysql app is running on port', app.get('port'));
+});
